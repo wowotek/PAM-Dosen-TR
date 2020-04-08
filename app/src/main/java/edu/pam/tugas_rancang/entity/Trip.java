@@ -3,18 +3,12 @@ package edu.pam.tugas_rancang.entity;
 import androidx.annotation.Nullable;
 
 public class Trip {
-    private int id;
-    private Tour tour; // from class Tour
-    private String name;
+    private int id = 0;
+    private Tour tour = new Tour(0, ""); // from class Tour
+    private String name = "";
     private String description = "";
 
-    public Trip(int id, Tour tour, String name) {
-        this.id = id;
-        this.tour = tour;
-        this.name = name;
-    }
-
-    public Trip(int id, Tour tour, String name, @Nullable String description) {
+    public Trip(int id, Tour tour, String name, String description) {
         this.id = id;
         this.tour = tour;
         this.name = name;
@@ -38,7 +32,7 @@ public class Trip {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {

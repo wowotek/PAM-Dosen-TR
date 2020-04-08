@@ -16,34 +16,34 @@ import edu.pam.tugas_rancang.entity.Tour;
 import edu.pam.tugas_rancang.entity.Trip;
 
 public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ViewHolder>{
-    private ArrayList<Trip> TripsData;
+    private ArrayList<Trip> tripsData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
     public TripListAdapter(Context context, ArrayList<Trip> data) {
         this.mInflater = LayoutInflater.from(context);
-        this.TripsData = data;
+        this.tripsData = data;
     }
 
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.tour_list_row_layout, parent, false);
+        View view = mInflater.inflate(R.layout.trip_list_row_layout, parent, false);
         return new ViewHolder(view);
     }
 
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tripNameData.setText(TripsData.get(position).getName());
-        holder.tripDescData.setText(TripsData.get(position).getDescription());
+        holder.tripNameData.setText(tripsData.get(position).getName());
+        holder.tripDescData.setText(tripsData.get(position).getDescription());
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return TripsData.size();
+        return tripsData.size();
     }
 
 
@@ -54,8 +54,8 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ViewHo
 
         ViewHolder(View itemView) {
             super(itemView);
-            tripNameData = itemView.findViewById(R.id.trip_name);
-            tripDescData = itemView.findViewById(R.id.trip_desc);
+            tripNameData = itemView.findViewById(R.id.trip_name_row);
+            tripDescData = itemView.findViewById(R.id.trip_desc_row);
             itemView.setOnClickListener(this);
         }
 
@@ -67,19 +67,19 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ViewHo
 
     // convenience method for getting data at click position
     Trip getItem(int id) {
-        return TripsData.get(id);
+        return tripsData.get(id);
     }
 
     // delete previous data, and update with the new one
     void updateList(ArrayList<Trip> newData){
-        this.TripsData = newData;
+        this.tripsData = newData;
         this.notifyDataSetChanged();
         notifyDataSetChanged();
     }
 
     // add / apppend new data to the list
     public void appendList(Trip data){
-        this.TripsData.add(data);
+        this.tripsData.add(data);
         this.notifyDataSetChanged();
         notifyDataSetChanged();
     }

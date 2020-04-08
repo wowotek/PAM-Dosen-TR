@@ -30,7 +30,7 @@ public class BudgetListAdapter extends RecyclerView.Adapter<BudgetListAdapter.Vi
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.tour_list_row_layout, parent, false);
+        View view = mInflater.inflate(R.layout.budget_list_row_layout, parent, false);
         return new ViewHolder(view);
     }
 

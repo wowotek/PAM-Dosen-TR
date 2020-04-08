@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(MainActivity.this, TourManagementActivity.class);
+        Intent intent = new Intent(MainActivity.this, BudgetManagementActivity.class);
         Intent resultIntent = new Intent();
         setResult(1, resultIntent);
         MainActivity.this.startActivity(intent);

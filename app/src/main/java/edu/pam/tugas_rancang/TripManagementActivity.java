@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -47,19 +48,23 @@ public class TripManagementActivity extends AppCompatActivity implements TripLis
 
     public void newTripOnClick(View view){
         Intent i = new Intent(this, AddTripActivity.class);
-        startActivityForResult(i, 1);
+        startActivityForResult(i, 2);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 1){
+        if(requestCode == 2){
             if(resultCode == Activity.RESULT_OK){
                 this.tripListAdapter.appendList(
-                        new Trip(this.tripData.size()+1, new Tour(0, ""), data.getStringExtra("tripNameExtra"), data.getStringExtra("tripDescExtra"))
+                        new Trip(
+                                3,
+                                new Tour(100, "wat"),
+                                data.getStringExtra("tripNameExtra"),
+                                data.getStringExtra("tripDescExtra")
+                        )
                 );
-                this.tripListAdapter.notifyDataSetChanged();
             }
         }
     }

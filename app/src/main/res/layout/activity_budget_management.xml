@@ -19,7 +19,7 @@
         android:id="@+id/budgetNewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/trip_add_button"
+        android:text="@string/budget_add_button"
         android:onClick="newBudgetOnClick"
 
         app:layout_constraintBottom_toBottomOf="parent"

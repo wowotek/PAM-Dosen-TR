@@ -11,12 +11,12 @@
 
     <!-- Budget List Placeholder -->
     <string name="budget_row_name_placeholder">Budget Name</string>
-    <string name="budget_row_separator">\ |\ </string>
+    <string name="budget_row_separator">&#160;|&#160;</string>
     <string name="budget_row_amount_placeholder">Rp 2 000 000,-</string>
 
     <!-- tags -->
     <string name="tags_accomodation">Accomodation</string>
-    <string name="tags_transportation">✈Transportation</string>
+    <string name="tags_transportation">Transportation</string>
     <string name="tags_destination">️️Destination</string>
     <string name="tags_activity">Activity‍️️</string>
     <string name="tags_souvenir">Souvenir</string>

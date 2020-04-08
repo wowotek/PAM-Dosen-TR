@@ -4,41 +4,20 @@ import androidx.annotation.Nullable;
 
 public class Budget {
     private int id;
-    private Trip trip;
+    private Trip trip = new Trip(0, new Tour(0, ""), "", "");
     private String name = "Unnamed Budget";
     private String description = "";
-    private double budget;
-    private BudgetType budgetType;
-
-    // Trip Object Enabled and Item Type Disabled Constructor
-    public Budget(int id, Trip trip, double budget) {
-        this.id = id;
-        this.trip = trip;
-        this.budget = budget;
-    }
-
-    public Budget(int id, Trip trip, @Nullable String name, double budget) {
-        this.id = id;
-        this.trip= trip;
-        this.name = name;
-        this.budget = budget;
-    }
-
-    public Budget(int id, Trip trip, @Nullable String name, @Nullable String description, double budget) {
-        this.id = id;
-        this.trip= trip;
-        this.name = name;
-        this.description = description;
-        this.budget = budget;
-    }
+    private double budget = 0.0;
+    private BudgetType budgetType = new BudgetType(0, "");
 
     // Trip Object Enabled and Item Type Enabled Constructor
-    public Budget(int id, Trip trip, @Nullable String name, @Nullable String description, double budget, @Nullable BudgetType budgetType) {
+    public Budget(int id, Trip trip, String name, String description, double budget, BudgetType budgetType) {
         this.id = id;
         this.trip= trip;
         this.name = name;
         this.description = description;
         this.budget = budget;
+        this.budgetType = budgetType;
     }
 
     public int getId() {

@@ -1,8 +1,8 @@
 package edu.pam.tugas_rancang.entity;
 
 public class BudgetType {
-    private int id;
-    private String name;
+    private int id = 0;
+    private String name = "";
 
     public BudgetType(int id, String name){
         this.id = id;
