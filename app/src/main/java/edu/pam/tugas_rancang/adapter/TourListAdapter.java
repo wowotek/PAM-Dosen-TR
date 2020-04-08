@@ -70,21 +70,21 @@ public class TourListAdapter extends RecyclerView.Adapter<TourListAdapter.ViewHo
     }
 
     // delete previous data, and update with the new one
-    void updateList(ArrayList<Tour> newData){
+    public void updateList(ArrayList<Tour> newData){
         this.ToursData = newData;
         this.notifyDataSetChanged();
         notifyDataSetChanged();
     }
 
     // add / apppend new data to the list
-    void appendList(Tour data){
+    public void appendList(Tour data){
         this.ToursData.add(data);
         this.notifyDataSetChanged();
         notifyDataSetChanged();
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

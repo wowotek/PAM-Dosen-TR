@@ -20,10 +20,11 @@
         app:layout_constraintVertical_bias="0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/tourNewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tour_add_button"
+        android:onClick="newTourOnClick"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.949"
