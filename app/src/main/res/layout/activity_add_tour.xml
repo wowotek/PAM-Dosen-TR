@@ -67,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:backgroundTint="@color/colorButtonAccept"
+        android:background="@color/colorButtonAccept"
         android:text="@string/tour_add_add_tour_btn"
 
         app:layout_constraintBottom_toBottomOf="parent"

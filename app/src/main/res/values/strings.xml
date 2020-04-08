@@ -26,13 +26,29 @@
     <string name="tags_default">Untagged</string>
 
     <!-- Layouts -->
+    <!-- Tour Management Layout -->
+    <string name="tour_add_button">New Tour</string>
+
+    <!-- Trip Management Layout -->
+    <string name="trip_add_button">New Trip</string>
+
+    <!-- Budget Management Layout -->
+    <string name="budget_add_button">Plan Your Budget</string>
+
     <!-- Tour Add Layout -->
     <string name="tour_add_tour_name">Name of Your Tour</string>
     <string name="tour_add_tour_desc">Additional Descriptions</string>
     <string name="tour_add_add_tour_btn">Add Tour</string>
 
-    <!-- Activity Add Layout -->
+    <!-- Trip Add Layout -->
     <string name="trip_add_trip_name">Name your trip</string>
     <string name="trip_add_trip_desc">Describe your Trip</string>
+    <string name="trip_add_add_trip_btn">Add Trip</string>
 
+    <!-- Budget Add Budget -->
+    <string name="budget_add_budget_name">Name Your Budget</string>
+    <string name="budget_add_budget_description">Describe Your Budget</string>
+    <string name="budget_add_budget_amount">How Much Will You Spend ?</string>
+    <string name="budget_add_budget_choose">What Kind of Budget Is This ?</string>
+    <string name="budget_add_add_budget_btn">Confirm Budget</string>
 </resources>

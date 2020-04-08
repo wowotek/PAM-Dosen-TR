@@ -20,7 +20,7 @@ public class TourListAdapter extends RecyclerView.Adapter<TourListAdapter.ViewHo
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    TourListAdapter(Context context, ArrayList<Tour> data) {
+    public TourListAdapter(Context context, ArrayList<Tour> data) {
         this.mInflater = LayoutInflater.from(context);
         this.ToursData = data;
     }
