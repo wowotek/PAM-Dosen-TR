@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -44,16 +45,21 @@ public class TourManagementActivity extends AppCompatActivity implements TourLis
     }
 
     public void newTourOnClick(View view){
-        Intent intent = new Intent(TourManagementActivity.this, AddTourActivity.class);
-        Intent resultIntent = new Intent();
-        setResult(1, resultIntent);
-        TourManagementActivity.this.startActivityForResult(intent, 1);
-        finish();
+        Intent i = new Intent(this, AddTourActivity.class);
+        startActivityForResult(i, 1);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this, data.getStringExtra("tourName") + " " + data.getStringExtra("tourDesc"), Toast.LENGTH_LONG).show();
+
+        if(requestCode == 1){
+            if(resultCode == Activity.RESULT_OK){
+                this.tourListAdapter.appendList(
+                        new Tour(this.toursData.size()+1, data.getStringExtra("tourNameExtra"), data.getStringExtra("tourDescExtra"))
+                );
+                this.tourListAdapter.notifyDataSetChanged();
+            }
+        }
     }
 }

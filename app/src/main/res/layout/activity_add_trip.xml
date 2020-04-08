@@ -69,6 +69,7 @@
         android:layout_marginHorizontal="10dp"
         android:background="@color/colorButtonAccept"
         android:text="@string/trip_add_add_trip_btn"
+        android:onClick="tripAddOnClick"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.526"

@@ -2,6 +2,7 @@ package edu.pam.tugas_rancang;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,9 +28,9 @@ public class AddTourActivity extends AppCompatActivity {
 
     public void tourAddOnClick(View view){
         Intent intent = new Intent();
-        intent.putExtra("tourName", this.tourNameData.getText());
-        intent.putExtra("tourDesc", this.tourDescData.getText());
-        setResult(1, intent);
+        intent.putExtra("tourNameExtra", this.tourNameData.getText().toString());
+        intent.putExtra("tourDescExtra", this.tourDescData.getText().toString());
+        setResult(Activity.RESULT_OK, intent);
         finish();
     }
 }

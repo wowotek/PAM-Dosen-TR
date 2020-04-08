@@ -108,6 +108,7 @@
         android:layout_marginHorizontal="10dp"
         android:background="@color/colorButtonAccept"
         android:text="@string/budget_add_add_budget_btn"
+        android:onClick="budgetAddOnClick"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
