@@ -7,7 +7,6 @@
     android:paddingHorizontal="6dp"
     android:paddingVertical="2dp">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,40 +18,56 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginRight="10dp"
-                android:src="@drawable/money"
-                android:baseline="20\"/>
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/money"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="2dp">
-                <TextView
-                    android:id="@+id/budget_name"
-                    android:text="@string/budget_row_name_placeholder"
-                    android:textColor="#000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"/>
+                android:orientation="vertical">
 
                 <TextView
-                    android:text="@string/budget_row_separator"
-                    android:textStyle="bold"
-                    android:textColor="#000"
+                    android:id="@+id/budget_tag"
+                    android:text="@string/tags_accomodation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="22sp"/>
+                    android:textSize="14sp"
+                    android:background="@drawable/tags_bg_shape"/>
 
-                <TextView
-                    android:id="@+id/budget_amount"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/budget_row_amount_placeholder"
-                    android:textSize="20sp" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        android:id="@+id/budget_name"
+                        android:text="@string/budget_row_name_placeholder"
+                        android:textColor="#000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:text="@string/budget_row_separator"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"/>
+
+                    <TextView
+                        android:id="@+id/budget_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/budget_row_amount_placeholder"
+                        android:textSize="20sp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

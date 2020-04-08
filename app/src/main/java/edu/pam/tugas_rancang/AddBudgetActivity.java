@@ -1,14 +1,14 @@
 package edu.pam.tugas_rancang;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.provider.FontRequest;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class AddBudgetActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add_budget);
     }
 }

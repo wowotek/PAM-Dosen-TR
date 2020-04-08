@@ -13,4 +13,15 @@
     <string name="budget_row_name_placeholder">Budget Name</string>
     <string name="budget_row_separator">\ |\ </string>
     <string name="budget_row_amount_placeholder">Rp 2 000 000,-</string>
+
+    <!-- tags -->
+    <string name="tags_accomodation">Accomodation</string>
+    <string name="tags_transportation">✈Transportation</string>
+    <string name="tags_destination">️️Destination</string>
+    <string name="tags_activity">Activity‍️️</string>
+    <string name="tags_souvenir">Souvenir</string>
+    <string name="tags_consumption">Consumption</string>
+    <string name="tags_expected">Expected Extra</string>
+    <string name="tags_unexpected">Unexpected Extra</string>
+    <string name="tags_default">Untagged</string>
 </resources>

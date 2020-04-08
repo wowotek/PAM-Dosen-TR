@@ -1,4 +1,4 @@
-package edu.pam.tugas_rancang.logic;
+package edu.pam.tugas_rancang.entity;
 
 public class Tour {
     private int id;
