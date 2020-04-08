@@ -7,5 +7,10 @@
 
     <!-- Trip List Placeholders -->
     <string name="trip_row_name_placeholder">Trip Name Here</string>
-    <string name="trip_row_desc_placeholder">Trip Description of current tour name here</string>
+    <string name="trip_row_desc_placeholder">Trip Description of current trip name here</string>
+
+    <!-- Budget List Placeholder -->
+    <string name="budget_row_name_placeholder">Budget Name</string>
+    <string name="budget_row_separator">\ |\ </string>
+    <string name="budget_row_amount_placeholder">Rp 2 000 000,-</string>
 </resources>

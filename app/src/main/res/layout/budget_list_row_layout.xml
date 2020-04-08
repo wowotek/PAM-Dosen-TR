@@ -7,11 +7,12 @@
     android:paddingHorizontal="6dp"
     android:paddingVertical="2dp">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#fdd"
+        android:background="#dfd"
         android:padding="8dp"
         android:paddingHorizontal="10dp"
         android:hapticFeedbackEnabled="true">
@@ -20,31 +21,39 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="8dp"
-                android:src="@drawable/luggage"/>
-
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/money"
+                android:baseline="20\"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
                 <TextView
-                    android:id="@+id/trip_name"
-                    android:text="@string/trip_row_name_placeholder"
+                    android:id="@+id/budget_name"
+                    android:text="@string/budget_row_name_placeholder"
                     android:textColor="#000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"/>
+
                 <TextView
-                    android:id="@+id/trip_desc"
+                    android:text="@string/budget_row_separator"
+                    android:textStyle="bold"
+                    android:textColor="#000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/trip_row_desc_placeholder"
-                    android:textSize="12sp" />
+                    android:textSize="22sp"/>
+
+                <TextView
+                    android:id="@+id/budget_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/budget_row_amount_placeholder"
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </LinearLayout>
