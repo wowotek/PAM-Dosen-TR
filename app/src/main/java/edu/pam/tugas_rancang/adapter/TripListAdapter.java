@@ -21,7 +21,7 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ViewHo
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    TripListAdapter(Context context, ArrayList<Trip> data) {
+    public TripListAdapter(Context context, ArrayList<Trip> data) {
         this.mInflater = LayoutInflater.from(context);
         this.TripsData = data;
     }
@@ -78,14 +78,14 @@ public class TripListAdapter extends RecyclerView.Adapter<TripListAdapter.ViewHo
     }
 
     // add / apppend new data to the list
-    void appendList(Trip data){
+    public void appendList(Trip data){
         this.TripsData.add(data);
         this.notifyDataSetChanged();
         notifyDataSetChanged();
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

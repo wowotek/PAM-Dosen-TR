@@ -33,6 +33,7 @@ public class TourManagementActivity extends AppCompatActivity implements TourLis
         this.tourListView = findViewById(R.id.tourList);
         this.tourAddButton = findViewById(R.id.tourNewButton);
 
+        // Prepare Adapters
         this.tourListView.setLayoutManager(new LinearLayoutManager(this));
         this.tourListAdapter = new TourListAdapter(this, this.toursData);
         this.tourListAdapter.setClickListener(this);
