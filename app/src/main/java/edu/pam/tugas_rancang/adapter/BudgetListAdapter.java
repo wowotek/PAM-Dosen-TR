@@ -22,7 +22,7 @@ public class BudgetListAdapter extends RecyclerView.Adapter<BudgetListAdapter.Vi
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    BudgetListAdapter(Context context, ArrayList<Budget> data) {
+    public BudgetListAdapter(Context context, ArrayList<Budget> data) {
         this.mInflater = LayoutInflater.from(context);
         this.budgetsData = data;
     }
@@ -83,14 +83,14 @@ public class BudgetListAdapter extends RecyclerView.Adapter<BudgetListAdapter.Vi
     }
 
     // add / apppend new data to the list
-    void appendList(Budget data){
+    public void appendList(Budget data){
         this.budgetsData.add(data);
         this.notifyDataSetChanged();
         notifyDataSetChanged();
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
+    public void setClickListener(ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
     }
 

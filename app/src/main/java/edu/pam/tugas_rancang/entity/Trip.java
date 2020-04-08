@@ -4,32 +4,19 @@ import androidx.annotation.Nullable;
 
 public class Trip {
     private int id;
-    private int tour_id; // from class Tour
+    private Tour tour; // from class Tour
     private String name;
     private String description = "";
 
-    public Trip(int id, int tour_id, String name) {
-        this.id = id;
-        this.tour_id = tour_id;
-        this.name = name;
-    }
-
-    public Trip(int id, int tour_id, String name, @Nullable String description) {
-        this.id = id;
-        this.tour_id = tour_id;
-        this.name = name;
-        this.description = description;
-    }
-
     public Trip(int id, Tour tour, String name) {
         this.id = id;
-        this.tour_id = tour.getId();
+        this.tour = tour;
         this.name = name;
     }
 
     public Trip(int id, Tour tour, String name, @Nullable String description) {
         this.id = id;
-        this.tour_id = tour.getId();
+        this.tour = tour;
         this.name = name;
         this.description = description;
     }
@@ -42,12 +29,12 @@ public class Trip {
         this.id = id;
     }
 
-    public int getTour_id() {
-        return tour_id;
+    public Tour getTour() {
+        return tour;
     }
 
-    public void setTour_id(int tour_id) {
-        this.tour_id = tour_id;
+    public void setTour(Tour tour) {
+        this.tour = tour;
     }
 
     public String getName() {

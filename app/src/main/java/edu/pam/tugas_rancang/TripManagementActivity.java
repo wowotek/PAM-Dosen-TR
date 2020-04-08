@@ -13,6 +13,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import edu.pam.tugas_rancang.adapter.TripListAdapter;
+import edu.pam.tugas_rancang.entity.Tour;
 import edu.pam.tugas_rancang.entity.Trip;
 
 public class TripManagementActivity extends AppCompatActivity implements TripListAdapter.ItemClickListener{
@@ -45,7 +46,7 @@ public class TripManagementActivity extends AppCompatActivity implements TripLis
     }
 
     public void newTripOnClick(View view){
-        Intent i = new Intent(this, AddTourActivity.class);
+        Intent i = new Intent(this, AddTripActivity.class);
         startActivityForResult(i, 1);
     }
 
@@ -56,9 +57,9 @@ public class TripManagementActivity extends AppCompatActivity implements TripLis
         if(requestCode == 1){
             if(resultCode == Activity.RESULT_OK){
                 this.tripListAdapter.appendList(
-                        new Trip(this.tripData.size()+1, data.getStringExtra("tourNameExtra"), data.getStringExtra("tourDescExtra"))
+                        new Trip(this.tripData.size()+1, new Tour(0, ""), data.getStringExtra("tripNameExtra"), data.getStringExtra("tripDescExtra"))
                 );
-                this.tourListAdapter.notifyDataSetChanged();
+                this.tripListAdapter.notifyDataSetChanged();
             }
         }
     }
