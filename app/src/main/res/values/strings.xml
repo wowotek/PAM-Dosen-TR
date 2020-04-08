@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">tugas_rancang</string>
+
+    <!-- Tour List Placeholders -->
+    <string name="tour_row_name_placeholder">Tour Name Here</string>
+    <string name="tour_row_desc_placeholder">Tour Description of current tour name here</string>
+
+    <!-- Trip List Placeholders -->
+    <string name="trip_row_name_placeholder">Trip Name Here</string>
+    <string name="trip_row_desc_placeholder">Trip Description of current tour name here</string>
+</resources>
