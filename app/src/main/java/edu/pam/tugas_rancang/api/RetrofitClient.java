@@ -16,4 +16,8 @@ public class RetrofitClient {
         }
         return retrofit;
     }
+
+    public static EndPoints getEndPoints(){
+        return RetrofitClient.getRetrofitclient().create(EndPoints.class);
+    }
 }

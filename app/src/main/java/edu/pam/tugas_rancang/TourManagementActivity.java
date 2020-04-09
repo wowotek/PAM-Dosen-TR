@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import edu.pam.tugas_rancang.adapter.TourListAdapter;
+import edu.pam.tugas_rancang.api.RetrofitClient;
 import edu.pam.tugas_rancang.entity.Tour;
 
 public class TourManagementActivity extends AppCompatActivity implements TourListAdapter.ItemClickListener {
@@ -38,6 +39,8 @@ public class TourManagementActivity extends AppCompatActivity implements TourLis
         this.tourListAdapter = new TourListAdapter(this, this.toursData);
         this.tourListAdapter.setClickListener(this);
         this.tourListView.setAdapter(this.tourListAdapter);
+
+        RetrofitClient.getEndPoints();
     }
 
     @Override
