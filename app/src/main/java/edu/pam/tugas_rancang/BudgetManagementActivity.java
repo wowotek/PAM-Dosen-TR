@@ -60,7 +60,7 @@ public class BudgetManagementActivity extends AppCompatActivity implements Budge
                 this.budgetListAdapter.appendList(
                         new Budget(
                                 this.budgetsData.size()+1,
-                                new Trip(0, new Tour(0, ""), "", ""),
+                                new Trip(0, new Tour(0, "", "", 0), "", ""),
                                 data.getStringExtra("budgetNameExtra"),
                                 data.getStringExtra("budgetDescExtra"),
                                 data.getDoubleExtra("budgetAmountExtra", 0.0),

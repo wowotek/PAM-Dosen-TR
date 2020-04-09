@@ -4,7 +4,7 @@ import androidx.annotation.Nullable;
 
 public class Trip {
     private int id = 0;
-    private Tour tour = new Tour(0, ""); // from class Tour
+    private Tour tour = new Tour(0, "", "", 0); // from class Tour
     private String name = "";
     private String description = "";
 

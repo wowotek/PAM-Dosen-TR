@@ -12,10 +12,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.pam.tugas_rancang.adapter.TourListAdapter;
+import edu.pam.tugas_rancang.api.GetTourAllResponse;
 import edu.pam.tugas_rancang.api.RetrofitClient;
 import edu.pam.tugas_rancang.entity.Tour;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TourManagementActivity extends AppCompatActivity implements TourListAdapter.ItemClickListener {
     TourListAdapter tourListAdapter;
@@ -25,10 +30,18 @@ public class TourManagementActivity extends AppCompatActivity implements TourLis
     RecyclerView tourListView;
     Button tourAddButton;
 
+    /* Intents Related */
+    String user_username;
+    int user_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_management);
+
+        Intent intent = getIntent();
+        user_username = intent.getStringExtra("user_username");
+        user_id = intent.getIntExtra("user_id", 0);
 
         // Prepare Widgets
         this.tourListView = findViewById(R.id.tourList);
@@ -40,7 +53,23 @@ public class TourManagementActivity extends AppCompatActivity implements TourLis
         this.tourListAdapter.setClickListener(this);
         this.tourListView.setAdapter(this.tourListAdapter);
 
-        RetrofitClient.getEndPoints();
+        RetrofitClient.getEndPoints().getTourAll().enqueue(new Callback<GetTourAllResponse>() {
+            @Override
+            public void onResponse(Call<GetTourAllResponse> call, Response<GetTourAllResponse> response) {
+                ArrayList<Tour> tours = new ArrayList<>();
+                for(Tour t: response.body().getTours()){
+                    if(t.getUser_id() == user_id) {
+                        tourListAdapter.appendList(t);
+                    }
+                }
+                tourListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<GetTourAllResponse> call, Throwable t) {
+
+            }
+        });
     }
 
     @Override
@@ -60,7 +89,7 @@ public class TourManagementActivity extends AppCompatActivity implements TourLis
         if(requestCode == 1){
             if(resultCode == Activity.RESULT_OK){
                 this.tourListAdapter.appendList(
-                        new Tour(this.toursData.size()+1, data.getStringExtra("tourNameExtra"), data.getStringExtra("tourDescExtra"))
+                        new Tour(this.toursData.size()+1, data.getStringExtra("tourNameExtra"), data.getStringExtra("tourDescExtra"), 0)
                 );
                 this.tourListAdapter.notifyDataSetChanged();
             }

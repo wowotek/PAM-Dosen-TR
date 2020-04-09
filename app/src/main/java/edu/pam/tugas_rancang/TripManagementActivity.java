@@ -43,7 +43,8 @@ public class TripManagementActivity extends AppCompatActivity implements TripLis
 
     @Override
     public void onItemClick(View view, int position) {
-
+        Intent i = new Intent(this, TourManagementActivity.class);
+        startActivityForResult(i, 2);
     }
 
     public void newTripOnClick(View view){
@@ -60,7 +61,7 @@ public class TripManagementActivity extends AppCompatActivity implements TripLis
                 this.tripListAdapter.appendList(
                         new Trip(
                                 3,
-                                new Tour(100, "wat"),
+                                new Tour(100, "wat", "", 0),
                                 data.getStringExtra("tripNameExtra"),
                                 data.getStringExtra("tripDescExtra")
                         )

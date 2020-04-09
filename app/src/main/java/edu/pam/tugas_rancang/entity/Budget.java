@@ -4,7 +4,7 @@ import androidx.annotation.Nullable;
 
 public class Budget {
     private int id;
-    private Trip trip = new Trip(0, new Tour(0, ""), "", "");
+    private Trip trip = new Trip(0, new Tour(0, "", "", 0), "", "");
     private String name = "Unnamed Budget";
     private String description = "";
     private double budget = 0.0;

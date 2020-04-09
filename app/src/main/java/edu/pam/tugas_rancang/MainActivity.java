@@ -37,11 +37,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loginOnClick(View view){
-        RetrofitClient.getEndPoints().login(usernameInput.getText().toString(), passwordInput.getText().toString()).enqueue(new Callback<LoginResponse>() {
+//        RetrofitClient.getEndPoints().login(usernameInput.getText().toString(), passwordInput.getText().toString()).enqueue(new Callback<LoginResponse>() {
+        RetrofitClient.getEndPoints().login("testUser", "testPassword").enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if(response.body().getStatus() == 200){
                     Intent intent = new Intent(MainActivity.this, TourManagementActivity.class);
+                    intent.putExtra("user_username", response.body().getUser().getUsername());
+                    intent.putExtra("user_id", response.body().getUser().getId());
                     MainActivity.this.startActivity(intent);
                     finish();
                 }

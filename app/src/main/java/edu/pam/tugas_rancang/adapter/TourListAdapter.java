@@ -36,7 +36,7 @@ public class TourListAdapter extends RecyclerView.Adapter<TourListAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.tourNameData.setText(ToursData.get(position).getName());
-        holder.tourDescData.setText(ToursData.get(position).getDescription());
+        holder.tourDescData.setText(ToursData.get(position).getDesc());
     }
 
     // total number of rows

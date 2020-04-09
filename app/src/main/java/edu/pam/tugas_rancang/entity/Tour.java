@@ -3,17 +3,14 @@ package edu.pam.tugas_rancang.entity;
 public class Tour {
     private int id;
     private String name;
-    private String description = "";
+    private String desc = "";
+    private int user_id = 0;
 
-    public Tour(int id, String name){
+    public Tour(int id, String name, String desc, int user_id){
         this.id = id;
         this.name = name;
-    }
-
-    public Tour(int id, String name, String description){
-        this.id = id;
-        this.name = name;
-        this.description = description;
+        this.desc = desc;
+        this.user_id = user_id;
     }
 
     public int getId() {
@@ -32,11 +29,19 @@ public class Tour {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

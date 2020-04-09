@@ -7,37 +7,72 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface EndPoints {
-//    @POST("register")
-//    Call<Object> register(String username, String password, String email, String phone);
-
-    @POST("/login")
+    @POST("register")
     @FormUrlEncoded
-    Call<LoginResponse> login(@Field("username") String username, @Field("password") String password);
-//
-//    @POST("add_tour")
-//    Call<Object> addTour(String username, String tour_name, String tour_desc);
-//
-//    @POST("edit_tour")
-//    Call<Object> editTour(int tour_id, String tour_name, String tour_desc);
-//
-//    @POST("delete_tour")
-//    Call<Object> deleteTour(int tour_id);
-//
-//    @POST("add_trip")
-//    Call<Object> addTrip(int tour_id, String trip_name, String trip_desc);
-//
-//    @POST("edit_trip")
-//    Call<Object> editTrip(int trip_id, String trip_name, String trip_desc);
-//
-//    @POST("delete_trip")
-//    Call<Object> deleteTrip(int trip_id);
-//
-//    @POST("add_budget")
-//    Call<Object> addBudget(int trip_id, String budget_name, String budget_desc, double budget_budget, int budget_type_id);
-//
-//    @POST("edit_budget")
-//    Call<Object> editBudget(int budget_id, String budget_name, String budget_desc, double budget_budget, int budget_type_id);
-//
-//    @POST("delete_budget")
-//    Call<Object> deleteBudget(int budget_id);
+    Call<RegisterResponse> register(
+            @Field("username") String username,
+            @Field("password") String password,
+            @Field("email") String email,
+            @Field("phone") String phone);
+
+    @POST("login")
+    @FormUrlEncoded
+    Call<LoginResponse> login(
+            @Field("username") String username,
+            @Field("password") String password);
+
+    @POST("get_tour_all")
+    Call<GetTourAllResponse> getTourAll();
+
+    @POST("add_tour")
+    @FormUrlEncoded
+    Call<TourResponse> addTour(
+            @Field("username") String username,
+            @Field("tour_name") String tour_name,
+            @Field("tour_desc") String tour_desc);
+
+    @POST("edit_tour")
+    Call<TourResponse> editTour(
+            int tour_id,
+            String tour_name,
+            String tour_desc);
+
+    @POST("delete_tour")
+    Call<TourResponse> deleteTour(int tour_id);
+
+    @POST("add_trip")
+    Call<TripResponse> addTrip(
+            @Field("tour_id") int tour_id,
+            @Field("trip_name") String trip_name,
+            @Field("trip_desc") String trip_desc);
+
+    @POST("edit_trip")
+    Call<TripResponse> editTrip(
+            @Field("trip_id") int trip_id,
+            @Field("trip_name") String trip_name,
+            @Field("trip_desc") String trip_desc);
+
+    @POST("delete_trip")
+    Call<TripResponse> deleteTrip(
+            @Field("trip_id") int trip_id);
+
+    @POST("add_budget")
+    Call<BudgetResponse> addBudget(
+            @Field("trip_id") int trip_id,
+            @Field("budget_name") String budget_name,
+            @Field("budget_desc") String budget_desc,
+            @Field("budget_budget") double budget_budget,
+            @Field("budget_type_id") int budget_type_id);
+
+    @POST("edit_budget")
+    Call<BudgetResponse> editBudget(
+            @Field("budget_id") int budget_id,
+            @Field("budget_name") String budget_name,
+            @Field("budget_desc") String budget_desc,
+            @Field("budget_budget") double budget_budget,
+            @Field("budget_type_id") int budget_type_id);
+
+    @POST("delete_budget")
+    Call<BudgetResponse> deleteBudget(
+            @Field("budget_id") int budget_id);
 }
